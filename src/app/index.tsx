@@ -1,15 +1,14 @@
-import { Text, View } from "react-native";
+import React from "react";
+import { CartProvider } from "../cart/CartContext";
+import { AppProviders } from "./AppProviders";
+import MenuScreen from "./screens/MenuScreen";
 
-export default function Index() {
+export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Double Tap</Text>
-    </View>
+    <AppProviders>
+      <CartProvider>
+        <MenuScreen />
+      </CartProvider>
+    </AppProviders>
   );
 }
